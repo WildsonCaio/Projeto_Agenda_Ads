@@ -1,4 +1,12 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
+from . models import Contatos
 
 def index(request):
-    return render(request, 'pages/index.html')
+    contatos = Contatos.objects.all()
+    return render(request, 'pages/index.html', {'contatos':contatos})
+
+def search(request):
+    q = request.GET.get('search')
+    print(q)
+    contatos = Contatos.objects.filter(nome__icontains=q)
+    return render(request, 'pages/index.html', {'contatos':contatos})

@@ -6,6 +6,4 @@ class AdminContatos(admin.ModelAdmin):
     search_fields = ['nome']
     list_filter = ['ativo']
     list_display_links = ['nome']
-
-
 admin.site.register(Contatos, AdminContatos)
