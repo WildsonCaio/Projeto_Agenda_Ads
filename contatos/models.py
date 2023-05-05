@@ -2,6 +2,7 @@ from django.db import models
 
 class Contatos(models.Model):
     nome = models.CharField(max_length=255)
+    imagem = models.ImageField()
     cpf = models.CharField(max_length=11)
     email = models.EmailField()
     telefone = models.IntegerField()
