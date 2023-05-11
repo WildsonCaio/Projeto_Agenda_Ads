@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #img{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <form method="POST" enctype="multipart/form-data" action=""> {% csrf_token %}
@@ -16,12 +22,29 @@
         <input name="descricao" value="{{contato.descricao}}" type="text" placeholder="descrição">
         <input name="data_nasc" value="{{contato.data_nascimento | date:'Y-m-d'}}" type="date">
         {% if contato.imagem %}
-        <input name="imagem" value="{{contato.imagem.url}}" type="file" accept="image/*">
+        <label for="img">Icone</label>
+        <input id="img" name="imagem" value="{{contato.imagem.url}}" type="file" accept="image/*">
         {% else %}
-        <input name="imagem" type="file" accept="image/*">
+        <label for="img">Icone</label>
+        <input id="img" name="imagem" type="file" accept="image/*">
         {% endif %}
         <input name="check" type="checkbox" {% if contato.ativo == True %} checked {% endif %}>
         <button type="submit">Adicionar</button>
     </form>
+
+
+    
+    <img class="img_input" src="" alt="">
+
+    <script>
+        let img = document.querySelector('#img')
+        let img_input = document.querySelector('.img_input')
+
+        img.addEventListener('change', function(){
+            img_input.src = window.URL.createObjectURL(this.files[0])
+        })
+
+    </script>
+
 </body>
 </html>

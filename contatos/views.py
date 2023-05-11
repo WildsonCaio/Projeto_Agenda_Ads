@@ -53,12 +53,14 @@ def editar(request, id):
         else:
             check = True    
         imagem = request.FILES.get('imagem')
+        print(imagem)
         contato.nome = nome
         contato.cpf = cpf
         contato.email = email
         contato.telefone = telefone
         contato.data = data
-        contato.imagem = imagem
+        if imagem != None:
+            contato.imagem = imagem
         contato.altura = altura
         contato.descricao = descricao
         contato.ativo = check
