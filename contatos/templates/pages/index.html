@@ -13,12 +13,18 @@
     <h1>Agenda</h1>
 
     <form action="{% url 'busca' %}">
-        <input type="text" name="search" placeholder="Buscar contato...">
-        <button type="submit">Buscar</button>
+        <div class="form-inputs">
+            <input type="text" name="search" placeholder="Buscar contato...">
+            <button type="submit">Buscar</button>
+        </div>
+        <div class="add-btn">
+            <a href="{% url 'adicionar' %}">+ Adicionar contato</a>
+            <div class="btn-filter">
+                <a href="{% url 'adicionar' %}">Ativos</a>
+                <a href="{% url 'adicionar' %}">Inativos</a>
+            </div>
+        </div>
     </form>
-    <div class="add-btn">
-        <a href="{% url 'adicionar' %}">Adicionar contato</a>
-    </div>
     <table>
         <thead>
             <tr>

@@ -12,8 +12,12 @@
     <main>
         <div class="card">
             <div class="profile">
-                <img src="{{ contato.imagem.url }}" alt="">
-            </div>
+                {% if contato.imagem %}
+                    <img src="{{ contato.imagem.url }}" alt="">
+                {% else %}
+                    <img src="https://www.ferramentastenace.com.br/wp-content/uploads/2017/11/sem-foto.jpg" alt="">
+                {% endif %}
+                </div>
             <div class="info">
                 <p>{{contato.nome}}</p>
                 <p>{{contato.cpf}}</p>
@@ -27,7 +31,7 @@
             </div>
             <div class="btn">
                 <a href="{% url 'deletar' contato.id %}">Apagar</a>
-                <a href="">Editar</a>
+                <a href="{% url 'editar' contato.id %}">Editar</a>
             </div>
         </div>
     </main>

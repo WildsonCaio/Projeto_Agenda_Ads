@@ -8,7 +8,7 @@
 
 table{
     width:800px;
-    margin: 40px auto;
+    margin: 10px auto;
     border-collapse: collapse;
     text-align: left;
     border-radius: 10px 10px 0 0;
@@ -55,10 +55,13 @@ h1{
 
 form{
     width: 800px;
+    padding: 0 12px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
-form > input{
+.form-inputs > input{
     height: 2rem;
     padding: 0 2px;
 }
@@ -133,6 +136,17 @@ form > input{
     margin: 0 5px;
 }
 
+.form-inputs{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.form-inputs > button{
+    height: 2rem;
+    padding: 0 6px;
+}
+
 .btn > a:nth-child(2){
     background-color: rgb(127, 209, 19);
 }
@@ -140,5 +154,23 @@ form > input{
 
 .add-btn{
     width: 800px;
-    margin: 40px auto;
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    align-items: center;
+}
+
+.add-btn > a, .btn-filter > a{
+    background-color: rgb(22, 162, 205);
+    color: white;
+    border-radius: 12px;
+    padding: 12px 30px;
+}
+
+.btn-filter > a:nth-child(1){
+    background-color: rgb(20, 214, 46);
+}
+.btn-filter > a:nth-child(2){
+    background-color: tomato;
 }
