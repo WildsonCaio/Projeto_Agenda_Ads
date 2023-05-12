@@ -37,6 +37,14 @@
 
 // UMD (Universal Module Definition) patterns for JavaScript modules that work everywhere.
 // https://github.com/umdjs/umd/blob/master/templates/jqueryPlugin.js
+
+
+(function(){
+    $('.altura').mask('0.00')
+    $('.cpf').mask('000.000.000-00')
+    $('.telefone').mask('00 00000 0000')
+})
+
 (function (factory, jQuery, Zepto) {
 
     if (typeof define === 'function' && define.amd) {
