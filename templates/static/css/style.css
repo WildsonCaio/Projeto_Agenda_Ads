@@ -17,8 +17,14 @@
     color: white;
 }
 
-.navbar > a{
+.user > a{
     color: white;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 table{
@@ -78,10 +84,13 @@ form{
 
 .form-inputs > input{
     height: 2rem;
-    padding: 0 2px;
 }
 
-
+.login{
+    background-color: green !important;
+    padding: 80px 30px !important;
+    color: white;
+}
 
 
 .card{
@@ -207,6 +216,7 @@ form{
     height: 2rem;
     margin: 8px 0;
     width: 100%;
+    padding: 0 1rem;
 
 }
 

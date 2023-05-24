@@ -13,7 +13,11 @@
     
     <div class="navbar">
         <label for="">Agenda</label>
-        <a href="{% url 'logout' %}">Sair</a>
+
+        <div class="user">
+            <p>Nome do usuario</p>
+            <a href="{% url 'logout' %}">Sair</a>
+        </div>
     </div>
 
     <form action="{% url 'busca' %}">

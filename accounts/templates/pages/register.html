@@ -12,14 +12,11 @@
     
 
     <form class="form-input login" method="POST"> {% csrf_token %}
-        <h1>Entrar</h1>
-        {% if messages %}
-            {% for message in messages.error %}
-                <h6>{{message}}</h6>
-            {% endfor %}
-        {% endif %}
+        <h1>Cadastro</h1>
         <input name="username" type="text" placeholder="Usuario">
+        <input name="email" type="email" placeholder="Email">
         <input name="password" type="password" placeholder="Senha">
+        <input name="password_repeat" type="password" placeholder="Repita sua Senha">
         <button type="submit">Entrar</button>
     </form>
 
